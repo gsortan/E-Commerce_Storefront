@@ -18,16 +18,19 @@ export default async function NavBar({ user }) {
           />
         </Link>
 
-        <div className=" p-4 hidden sm:block">
+        <div
+          className="
+          col-span-3 row-start-2 pt-2
+          sm:col-start-2 sm:col-span-1 sm:row-start-1 sm:p-4
+          
+        "
+        >
           <SearchBar />
         </div>
 
         <div className="flex items-center gap-4 col-start-3 row-start-1">
           <CartButton />
           <Profile user={user} />
-        </div>
-        <div className=" col-span-3 row-start-2 sm:col-start-2 sm:col-span-1 sm:row-start-1 pt-2 sm:hidden">
-          <SearchBar />
         </div>
       </div>
     </>
