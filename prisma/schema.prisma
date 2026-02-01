@@ -5,24 +5,22 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  
 }
 
 model Product {
-  id          Int      @id 
+  id          Int         @id
   title       String
   description String
   imageURL    String
-  price       Decimal  @db.Decimal(10,2)
+  price       Decimal     @db.Decimal(10, 2)
   stock       Int?
   category    String
-
   cartItems   CartItem[]
   orderItems  OrderItem[]
 }
 
 model User {
-  id     String   @id
+  id     String     @id
   cart   CartItem[]
   orders Order[]
 }
@@ -30,46 +28,39 @@ model User {
 model CartItem {
   id        Int      @id @default(autoincrement())
   quantity  Int      @default(1)
-
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-
-  product   Product  @relation(fields: [productId], references: [id])
-  productId Int
-
   createdAt DateTime @default(now())
+  productId Int
+  userId    String
   updatedAt DateTime @updatedAt
+  product   Product  @relation(fields: [productId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
 
   @@unique([userId, productId])
 }
 
 model Order {
-  id        Int        @id @default(autoincrement())
-  orderNumber     String   @unique
-  user      User       @relation(fields: [userId], references: [id])
-  userId    String
-  items     OrderItem[]
-  createdAt DateTime   @default(now())
-  stripeSessionId String     @unique
-  totalAmount Decimal   @db.Decimal(10,2)
-
-  shipName String
+  id               Int         @id @default(autoincrement())
+  userId           String
+  createdAt        DateTime    @default(now())
+  stripeSessionId  String      @unique
+  totalAmount      Decimal     @db.Decimal(10, 2)
+  shipCity         String
+  shipCountry      String
+  shipName         String
+  shipPostalCode   String
+  shipRegion       String
   shipAddressLine1 String
   shipAddressLine2 String?
-  shipCity String
-  shipRegion String
-  shipPostalCode String
-  shipCountry String
+  user             User        @relation(fields: [userId], references: [id])
+  items            OrderItem[]
 }
 
 model OrderItem {
   id        Int     @id @default(autoincrement())
   quantity  Int
-  price     Decimal @db.Decimal(10,2) 
-
-  order     Order   @relation(fields: [orderId], references: [id])
+  price     Decimal @db.Decimal(10, 2)
   orderId   Int
-
-  product   Product @relation(fields: [productId], references: [id])
   productId Int
+  order     Order   @relation(fields: [orderId], references: [id])
+  product   Product @relation(fields: [productId], references: [id])
 }
