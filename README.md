@@ -32,14 +32,35 @@ Create an account through Clerk authentication and then you can access the store
 
 ## Installation
 
+```bash
 # Clone the repo
 git clone https://github.com/gsortan/e-commerce_storefront.git
 
 # Install dependencies
 npm install
 
+# Set up environment variables
+
+Create a .env file in the root directory and add the following variables:
+APP_BASE_URL=<your_app_base_url>
+DATABASE_URL=<your_database_url>
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your_clerk_publishable_key>
+CLERK_SECRET_KEY=<your_clerk_secret_key>
+NEXT_PUBLIC_CLERK_SIGN_IN_FORCE_REDIRECT_URL=<your_sign_in_redirect_url>
+NEXT_PUBLIC_CLERK_SIGN_UP_FORCE_REDIRECT_URL=<your_sign_up_redirect_url>
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<your_stripe_publishable_key>
+STRIPE_SECRET_KEY=<your_stripe_secret_key>
+STRIPE_WEBHOOK_SECRET=<your_stripe_webhook_secret>
+
+# Prisma Setup
+npx prisma generate
+
+# Run database migrations
+npm run migrate
+
 # Run the development server
 npm run dev
+```
 
 ## Screenshots
 <img width="1918" height="1051" alt="image" src="https://github.com/user-attachments/assets/ea05dc40-4172-4ee2-ab9e-76d82dad70a0" />
