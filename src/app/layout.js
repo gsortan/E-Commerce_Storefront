@@ -2,7 +2,7 @@ import {
   ClerkProvider,
 } from "@clerk/nextjs";
 import "./globals.css";
-
+import Provider from "./Provider";
 
 export const metadata = {
   title: "Clerk Next.js Quickstart",
@@ -13,7 +13,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-         <ClerkProvider>{children}</ClerkProvider>
+       <Provider>
+         <ClerkProvider>{children}</ClerkProvider></Provider>
       </body>
     </html>
   );

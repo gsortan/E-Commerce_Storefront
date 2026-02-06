@@ -1,14 +1,14 @@
 import Link from "next/link";
-import Profile from "@/components/ProfileDropdown";
 import CartButton from "../app/(commerce)/cart/components/CartButton";
 import Image from "next/image";
 import shopBanner from "../../public/ShopLocal.png";
 import SearchBar from "./SearchBar";
+import ProfileDropdown from "./ProfileDropdown";
 
 export default async function NavBar({ user }) {
   return (
     <>
-      <div className="p-2 grid grid-cols-[auto_1fr_auto]  items-center bg-[#232f3e] shadow-md  sticky top-0 z-30">
+      <div className="p-4 grid grid-cols-[auto_1fr_auto]  items-center bg-[#232f3e] shadow-md  sticky top-0 z-30">
         <Link href="/shop" className="h-20">
           <Image
             src={shopBanner}
@@ -30,7 +30,7 @@ export default async function NavBar({ user }) {
 
         <div className="flex items-center gap-4 col-start-3 row-start-1">
           <CartButton />
-          <Profile user={user} />
+          <ProfileDropdown user={user} />
         </div>
       </div>
     </>
