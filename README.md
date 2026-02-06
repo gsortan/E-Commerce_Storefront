@@ -18,14 +18,14 @@ https://e-commercestorefrontprod.vercel.app
 - Mobile-first responsive design
 
 ## Tech Stack
-- Next.js (App Router)
-- React
+- Next.js
 - JavaScript
 - Tailwind CSS
 - Prisma ORM
 - PostgreSQL
 - Stripe Checkout
 - Clerk Authentication
+- HeroUI
 
 ## 🛠️ Getting Started
 Create an account through Clerk authentication and then you can access the store to purchase items. A Stripe test card number you can use for the checkout is: 4242 4242 4242 4242
@@ -62,11 +62,13 @@ npm run dev
 ```
 
 ## Screenshots
-<img width="1918" height="1051" alt="image" src="https://github.com/user-attachments/assets/ea05dc40-4172-4ee2-ab9e-76d82dad70a0" />
-<img width="1918" height="1066" alt="image" src="https://github.com/user-attachments/assets/dd240f4a-e7ca-4ec2-b553-57ef431afd36" />
-<img width="957" height="531" alt="Store4" src="https://github.com/user-attachments/assets/9c3d6c8b-5eda-45ad-9d6d-73f56f7e0e9d" />
-<img width="956" height="531" alt="store6" src="https://github.com/user-attachments/assets/f17cc8ab-1bf7-4b85-aa16-858079c0ea1f" />
-<img width="1914" height="1057" alt="image" src="https://github.com/user-attachments/assets/22bc8266-ef3c-4e8c-8295-212d724ef30b" />
+
+<img width="1912" height="1059" alt="image" src="https://github.com/user-attachments/assets/af4b9180-0459-4066-88c4-8d9a7cc5c46e" />
+<img width="1914" height="1063" alt="image" src="https://github.com/user-attachments/assets/6f7dcae8-cfe2-4854-8eaf-c924f319cfe8" />
+<img width="1918" height="1062" alt="image" src="https://github.com/user-attachments/assets/2d576c18-e937-4de3-9c71-b2725b7d59ee" />
+<img width="1915" height="1065" alt="image" src="https://github.com/user-attachments/assets/76c10452-54e1-44e6-9f55-287246f03f79" />
+<img width="1918" height="1066" alt="image" src="https://github.com/user-attachments/assets/00c2c7bb-3b4d-4297-8ae1-4a6a4dedf846" />
+
 
 
 
