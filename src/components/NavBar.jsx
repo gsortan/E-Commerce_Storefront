@@ -4,8 +4,6 @@ import Image from "next/image";
 import shopBanner from "../../public/ShopLocal.png";
 import SearchBar from "./SearchBar";
 import ProfileDropdown from "./ProfileDropdown";
-import {Autocomplete, AutocompleteItem} from "@heroui/react";
-import { getAllProducts } from "@/services/product/productServices";
 
 export default async function NavBar({ user }) {
 
