@@ -28,7 +28,7 @@ https://e-commercestorefrontprod.vercel.app
 - HeroUI
 
 ## 🛠️ Getting Started
-Create an account through Clerk authentication and then you can access the store to purchase items. A Stripe test card number you can use for the checkout is: 4242 4242 4242 4242
+Create an account through Clerk authentication sign-up and then you can access the store to purchase items. A Stripe test card number you can use for the checkout is: 4242 4242 4242 4242
 
 ## Installation
 
