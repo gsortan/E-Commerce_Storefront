@@ -50,9 +50,13 @@ export default function ProfileDropdown({ user }) {
             </div>
           </div>
         </DropdownItem>
+         <DropdownItem key="user-profile" as={Link} href="/user-profile">
+         Account Settings
+        </DropdownItem>
         <DropdownItem key="orders" as={Link} href="/orders">
           Orders
         </DropdownItem>
+       
         <DropdownItem key="logout" color="danger">
           Logout
         </DropdownItem>
