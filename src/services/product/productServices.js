@@ -4,14 +4,12 @@ import { prisma } from "../../lib/prisma.js";
 import { requireUserId } from "@/lib/auth.js";
 
 
-export async function getAllProducts(searchTerm) {
+export async function getAllProducts( searchTerm) {
   await requireUserId();
 
   const where = searchTerm
     ? {
-        OR: [
-          { title: { contains: searchTerm, mode: "insensitive" } },
-        ],
+      title: { contains: searchTerm, mode: "insensitive" }
       }
     : undefined;
 
