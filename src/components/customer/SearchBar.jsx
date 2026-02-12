@@ -1,10 +1,10 @@
 
 import { redirect } from "next/navigation";
 import SearchBarClient from "./SearchBarClient";
-import { getProducts } from "@/services/product/productServices";
+import { getShopProducts } from "@/services/product/productServices";
 
 export default async function SearchBar() {
-  const data = await getProducts();
+  const data = await getShopProducts();
 
   async function searchAction(formData) {
     "use server";

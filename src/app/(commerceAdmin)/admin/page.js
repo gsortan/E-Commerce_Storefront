@@ -1,7 +1,6 @@
 import RevenueCard from "@/components/admin/RevenueCard";
 import { currentUser } from "@clerk/nextjs/server";
 import CustomerCard from "@/components/admin/CustomerCard";
-import ProductsCard from "@/components/admin/ProductsCard";
 import { getRevenueSeries } from "@/services/order/orderServices";
 import RevenueChart from "@/components/admin/RevenueChart";
 

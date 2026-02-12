@@ -1,5 +1,4 @@
-import { auth, clerkClient} from "@clerk/nextjs/server";
-
+import { auth, clerkClient } from "@clerk/nextjs/server";
 
 export async function requireUserId() {
   const { userId } = await auth();
@@ -8,8 +7,6 @@ export async function requireUserId() {
   }
   return userId;
 }
-
-
 
 export async function requireAdmin() {
   const { userId } = await auth();

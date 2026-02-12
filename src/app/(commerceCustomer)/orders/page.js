@@ -1,4 +1,4 @@
-import { getOrders } from "@/services/order/orderServices";
+import { getMyOrders } from "@/services/order/orderServices";
 import OrderCard from "./components/OrderCard";
 import PaginationRounded from "../../../components/shared/PaginationRounded";
 import { currentUser } from "@clerk/nextjs/server";
@@ -12,7 +12,7 @@ export default async function OrderHistoryPage({ searchParams }) {
 
   const skip = (page - 1) * PAGE_SIZE;
 
-  const { orders, totalCount } = await getOrders(skip, PAGE_SIZE, user.id);
+  const { orders, totalCount } = await getMyOrders(skip, PAGE_SIZE);
 
   return (
     <div className="flex flex-col max-w-6xl mx-auto items-center gap-4 mb-4">

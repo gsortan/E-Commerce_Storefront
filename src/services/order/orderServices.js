@@ -83,11 +83,12 @@ export async function getOrderById(id) {
 export async function getOrders(
   skipVal,
   takeVal,
-  uid,
   dateStart,
   dateEnd,
   searchTerm,
 ) {
+  await requireAdmin();
+
   const term = (searchTerm ?? "").trim();
   const isNumeric = term ? /^[0-9]+$/.test(term) : false;
 
@@ -117,7 +118,6 @@ export async function getOrders(
   }
 
   const where = {
-    ...(uid ? { userId: uid } : {}),
     ...(createdAtFilter ? { createdAt: createdAtFilter } : {}),
     ...(OR.length > 0 ? { OR } : {}),
   };
@@ -148,8 +148,9 @@ export async function getOrders(
   };
 }
 
+
 export async function getMyOrders(skipVal, takeVal, dateStart, dateEnd) {
-  const uid = requireUserId();
+  const uid = await requireUserId();
 
   const sDate = dateStart ? new Date(dateStart) : undefined;
   const eDate = dateEnd ? new Date(dateEnd) : undefined;
@@ -189,7 +190,7 @@ export async function getMyOrders(skipVal, takeVal, dateStart, dateEnd) {
 }
 
 export async function getMyOrderById(id) {
-  const uid = requireUserId();
+  const uid = await requireUserId();
   const convertedId = Number(id);
 
   const order = await prisma.order.findUnique({
@@ -230,6 +231,8 @@ function addMonths(date, n) {
 }
 
 export async function getRevenueSeries({ mode }) {
+
+  await requireAdmin(); 
   const now = new Date();
 
   let start, end, bucket;

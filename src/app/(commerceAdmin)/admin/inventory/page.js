@@ -1,5 +1,5 @@
 import InventoryTable from "./components/InventoryTable";
-import { getProducts } from "@/services/product/productServices";
+import { getAdminProducts } from "@/services/product/productServices";
 import AdminSearchBar from "./components/AdminSearchBar";
 import AddProductButton from "./components/AddProductButton";
 import InventoryStatusFilter from "./components/InventoryStatusFilter";
@@ -17,13 +17,12 @@ export default async function InventoryPage({ searchParams }) {
   const status = params.status;
   const stockValue = params.stock 
 
-  const { products, totalCount } = await getProducts(
+  const { products, totalCount } = await getAdminProducts(
     skip,
     PAGE_SIZE,
     params.q,
     status,
     stockValue,
-    "ADMIN"
   );
 
   return (

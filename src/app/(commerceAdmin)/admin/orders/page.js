@@ -16,7 +16,6 @@ export default async function OrdersPage({ searchParams }) {
     PAGE_SIZE,
     undefined,
     undefined,
-    undefined,
     params.q
   );
 

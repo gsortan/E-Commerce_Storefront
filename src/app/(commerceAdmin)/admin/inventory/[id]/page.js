@@ -1,10 +1,10 @@
 import ProductForm from "../components/ProductForm";
 import { updateProduct } from "@/services/product/productServices";
-import { getProductById } from "@/services/product/productServices";
+import {getAdminProductById} from "@/services/product/productServices";
 
 export default async function EditProductPage({ params }) {
 const unwrappedParams = await params;
-  const product = await getProductById(unwrappedParams.id);
+  const product = await getAdminProductById(unwrappedParams.id);
 
   async function onSubmit(data) {
     "use server";
