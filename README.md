@@ -1,6 +1,6 @@
 # 🛍️ E-commerce Storefront
 
-A full-stack e-commerice storefront web application built with Next.js and Javascript. Users can browse products, search items, manage a shopping cart, and complete purchases through Stripe, with authentication handled by Clerk and data persisted using Prisma. They can also see their order history. 
+A full-stack e-commerce web application built with Next.js and JavaScript. Customers can browse products, search items, manage a shopping cart, and complete purchases through Stripe. Admins can manage inventory, products, and orders through a protected admin dashboard. Authentication is handled by Clerk and data is persisted with Prisma + PostgreSQL.
 
 ## Demo Link:
 https://e-commercestorefrontprod.vercel.app
