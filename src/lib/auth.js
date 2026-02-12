@@ -9,20 +9,17 @@ export async function requireUserId() {
   return userId;
 }
 
+
+
 export async function requireAdmin() {
-  const { userId } = auth();
+  const { userId } = await auth();
+  if (!userId) throw new Error("UNAUTHENTICATED");
 
-  if (!userId) {
-    throw new Error("Not authenticated");
-  }
-
-  const user = await clerkClient.users.getUser(userId);
+  const client = await clerkClient();
+  const user = await client.users.getUser(userId);
 
   const role = user.publicMetadata?.role;
-
-  if (role !== "admin") {
-    throw new Error("Not authorized");
-  }
+  if (role !== "admin") throw new Error("FORBIDDEN");
 
   return userId;
 }

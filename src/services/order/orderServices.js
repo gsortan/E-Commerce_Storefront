@@ -48,6 +48,8 @@ export async function getTotalRevenue() {
 }
 
 export async function getOrderById(id) {
+
+  await requireAdmin();
   const convertedId = Number(id);
 
   const order = await prisma.order.findUnique({
