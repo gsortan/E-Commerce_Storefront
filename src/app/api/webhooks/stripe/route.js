@@ -70,7 +70,11 @@ export async function POST(req) {
 
       await clearCartForUser(userId);
     } catch (e) {
-      console.error("createOrder failed:", e?.message ?? e);
+      console.error("createOrder failed:", e);
+  return NextResponse.json(
+    { error: "Order creation failed" },
+    { status: 500 }
+  );
     }
   }
 
