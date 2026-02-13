@@ -35,7 +35,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
     >
       <div>
         <label className="block text-sm font-medium mb-1">Title</label>
-        <input {...register("title")} className="w-full border px-2 py-1.5" />
+        <input {...register("title")} className="w-full border border-black px-2 py-1.5" />
         {errors.title && (
           <p className="text-xs text-red-500">{errors.title.message}</p>
         )}
@@ -46,7 +46,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
         <textarea
           rows="4"
           {...register("description")}
-          className=" border px-2 py-1.5  w-full resize-none"
+          className=" border border-black px-2 py-1.5  w-full resize-none"
         />
         {errors.description && (
           <p className="text-xs text-red-500">{errors.description.message}</p>
@@ -57,7 +57,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
         <label className="block text-sm font-medium mb-1">Image URL</label>
         <input
           {...register("imageURL")}
-          className="w-full border px-2 py-1.5"
+          className="w-full border border-black px-2 py-1.5"
         />
         {errors.imageURL && (
           <p className="text-xs text-red-500">{errors.imageURL.message}</p>
@@ -71,7 +71,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
             type="number"
             step="0.01"
             {...register("price")}
-            className="w-full border px-2 py-1.5"
+            className="w-full border border-black px-2 py-1.5"
           />
           {errors.price && (
             <p className="text-xs text-red-500">{errors.price.message}</p>
@@ -83,7 +83,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
           <input
             type="number"
             {...register("stock", { valueAsNumber: true })}
-            className="w-full border px-2 py-1.5"
+            className="w-full border border-black px-2 py-1.5"
           />
           {errors.stock && (
             <p className="text-xs text-red-500">{errors.stock.message}</p>
@@ -96,7 +96,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
           <label className="block text-sm font-medium mb-1">Category</label>
           <input
             {...register("category")}
-            className="w-full border px-2 py-1.5"
+            className="w-full border border-black px-2 py-1.5"
           />
           {errors.category && (
             <p className="text-xs text-red-500">{errors.category.message}</p>
@@ -105,7 +105,7 @@ export default function ProductForm({ defaultValues, onSubmit, buttonLabel, moda
 
         <div>
           <label className="block text-sm font-medium mb-1">Status</label>
-          <select {...register("status")} className="w-full border px-2 py-1.5">
+          <select {...register("status")} className="w-full border border-black px-2 py-1.5">
             <option value="ACTIVE">Active</option>
             <option value="DISABLED">Archived</option>
           </select>
