@@ -14,7 +14,7 @@ https://e-commercestorefrontprod.vercel.app
 - User authentication with Clerk
 - Secure checkout using Stripe
 - Checkout success page with order summary
-- Order history section with pagination
+- Order history section
 - Mobile-first responsive design
 
 ## 🔐 Admin Panel Features
@@ -31,7 +31,7 @@ Product management:
 Order management:
 
 - View all orders and dive into individual order details
-- Order list filtering  
+- Order list search where you can search by Id, customer name or customer email
 
 ## Tech Stack
 - Next.js
